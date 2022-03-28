@@ -15,6 +15,16 @@ function SelectableAreas() {
 
   // -----generating letters---
 
+  const box = new Array(5)
+    .fill(0)
+    .map((_, index) => (
+      <div
+        className={selected.has(index) ? "selected selectable" : "selectable"}
+        data-key={index}
+        key={index}
+      />
+    ));
+
   function colName(n) {
     var codeA = "a".charCodeAt(0);
     var codeZ = "z".charCodeAt(0);
@@ -32,16 +42,6 @@ function SelectableAreas() {
     var codeA = "a".charCodeAt(0);
     var codeZ = "z".charCodeAt(0);
     var len = codeZ - codeA + 1;
-
-    const box = new Array(5)
-      .fill(0)
-      .map((_, index) => (
-        <div
-          className={selected.has(index) ? "selected selectable" : "selectable"}
-          data-key={index}
-          key={index}
-        />
-      ));
 
     var s = "";
     while (n >= 0) {
@@ -116,15 +116,7 @@ function SelectableAreas() {
               column.map((col, i) => {
                 return (
                   <>
-                    <TableCell
-                      key={i}
-                      data-key={i}
-                      className={
-                        selected.has(i) ? "selected selectable" : "selectable"
-                      }
-                    >
-                      {col}
-                    </TableCell>
+                    <TableCell key={i}>{col}</TableCell>
                   </>
                 );
               })}
@@ -137,27 +129,23 @@ function SelectableAreas() {
             row.map((r, i) => {
               return (
                 <TableRow>
-                  <TableCell
-                    key={i}
-                    data-key={i}
-                    className={
-                      selected.has(i) ? "selected selectable" : "selectable"
-                    }
-                  >
-                    {r}
-                  </TableCell>
+                  <TableCell key={i}>{r}</TableCell>
+                  {new Array(50).fill(0).map((_, index) => (
+                    <TableCell
+                      className={
+                        selected.has(index)
+                          ? "selected selectable"
+                          : "selectable"
+                      }
+                      data-key={index}
+                      key={index}
+                    ></TableCell>
+                  ))}
                 </TableRow>
               );
             })}
         </TableBody>
       </Table>
-      {/* {new Array(400).fill(0).map((_, index) => (
-        <div
-          className={selected.has(index) ? "selected selectable" : "selectable"}
-          data-key={index}
-          key={index}
-        />
-      ))} */}
     </SelectionArea>
   );
 }
