@@ -1,29 +1,22 @@
 html,
 .container {
   padding: 0.5rem;
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 0.5rem;
-  -ms-grid-columns: (1fr)[20];
-      grid-template-columns: repeat(20, 1fr);
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   width: 100vw;
   height: 100%;
   background: #dbe9ff;
   border-radius: 0.5rem;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.container > div {
+.container > TableCell {
   background: #aaccff;
   border-radius: 0.25rem;
 }
 
-.container > div.selected {
+.container > TableCell.selected {
   background: #5f9efc;
 }
 
