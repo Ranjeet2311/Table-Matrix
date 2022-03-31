@@ -1,4 +1,4 @@
-import SelectionArea, { SelectionEvent } from "@viselect/react";
+import SelectionArea from "@viselect/react";
 import React, { useState } from "react";
 import SelectTable from "./SelectTable";
 

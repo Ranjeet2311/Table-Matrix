@@ -6,24 +6,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import letterGenerator from "./lettersGenerator";
 import { makeStyles } from "@material-ui/core/styles";
-
-// const customeStyle = {
-//   margin: "0px",
-//   color: "green",
-//   fontSize: "2rem",
-//   borderBottom: "10px solid black",
-// };
-
-// const useStyles = makeStyles({
-//   sticky: {
-//     position: "sticky",
-//     left: 0,
-//     background: "white",
-//     boxShadow: "5px 2px 5px grey",
-//   },
-// });
-
-// const classes = useStyles();
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 function SelectTable({ selected }) {
   const [column, setColumn] = useState([]);
@@ -33,18 +16,14 @@ function SelectTable({ selected }) {
 
   useEffect(() => {
     for (let n = 0; n < 50; n++) {
-      console.log("UseEffcet Column Loop");
       setColumn((preVal) => {
         return [...preVal, letterGenerator(n)];
       });
-      // console.log(colName(n));
     }
     for (let n = 0; n < 200; n++) {
-      console.log("UseEffcet row Loop");
       setRow((preVal) => {
         return [...preVal, letterGenerator(n)];
       });
-      // console.log(setRow(n));
     }
   }, []);
 
@@ -55,11 +34,7 @@ function SelectTable({ selected }) {
           <TableCell></TableCell>
           {column &&
             column.map((col, i) => {
-              return (
-                <>
-                  <TableCell>{col}</TableCell>
-                </>
-              );
+              return <TableCell key={i}>{col}</TableCell>;
             })}
         </TableRow>
       </TableHead>
