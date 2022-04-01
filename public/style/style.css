@@ -1,51 +1,23 @@
-html,
-.container {
-  padding: 0.5rem;
-  width: 100vw;
-  height: 100%;
-  background: #dbe9ff;
-  border-radius: 0.5rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+/* ---Viselect styling --- */
+
+/* 
+#root .container.green div.selected {
+  background: hsl(100, 80%, 65%);
+  border: 2px solid rgba(0, 0, 0, 0.075);
 }
 
-.container > TableCell {
-  background: #aaccff;
-  border-radius: 0.25rem;
+#root .container.blue div.selected {
+  background: hsl(150, 80%, 65%);
+  border: 2px solid rgba(0, 0, 0, 0.075);
 }
 
-.container > TableCell.selected {
-  background: #5f9efc;
+#root .container.red div.selected {
+  background: hsl(200, 80%, 65%);
+  border: 2px solid rgba(0, 0, 0, 0.075);
 }
 
 .selection-area {
-  background: #4f90f22d;
-  border: 1px solid #4f90f2;
-}
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100vh;
-}
-
-th {
-  background-color: white;
-  border: 1px solid gray;
-  width: 2rem;
-  height: 1rem;
-}
-
-td {
-  background-color: white;
-  border: 1px solid gray;
-  width: 2rem;
-  height: 1rem;
-}
-
-/* tr {
-  background-color: #dddddd;
+  background: rgba(46, 115, 252, 0.11);
+  border: 1px solid rgba(98, 155, 255, 0.85);
+  border-radius: 0.15em;
 } */
-/*# sourceMappingURL=style.css.map */
